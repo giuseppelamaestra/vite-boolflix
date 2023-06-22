@@ -1,6 +1,6 @@
 <template>
    <SearchBar @searched="getMovies"/>
-   <MoviesList/>
+   <MoviesList :movies="MoviesList"/>
 </template>
 <script>
 
@@ -16,7 +16,7 @@ export default {
     data(){
         return {
             moviesApiUrl : 'https://api.themoviedb.org/3/search/movie',
-            moviesList : [],
+            MoviesList : [],
         }
     },
 
@@ -34,9 +34,10 @@ export default {
                   query : searcheInput,
                        }
                      } )
-              .then(function (response) {
+              .then( (response) => {
                // handle success
-                 console.log(response);
+                 console.log(response.data.results);
+                 this.MoviesList = response.data.results;
                                  })
               .catch(function (error) {
                 // handle error
