@@ -1,8 +1,12 @@
 <template>
-   <SearchBar @searched="log"/>
+   <SearchBar @searched="getMovies"/>
    <MoviesList/>
 </template>
 <script>
+
+import axios from 'axios';
+
+
 
 import SearchBar from './SearchBar.vue';
 import MoviesList from './MoviesList.vue';
@@ -11,7 +15,8 @@ export default {
 
     data(){
         return {
-            moviesApiUrl : 'https://api.themoviedb.org/3/search/movie'
+            moviesApiUrl : 'https://api.themoviedb.org/3/search/movie',
+            moviesList : [],
         }
     },
 
@@ -20,9 +25,7 @@ export default {
          MoviesList,
     },
     methods : {
-        log(message) {
-            console.warn(message);
-         },
+   
 
          getMovies(searcheInput){
             axios.get(this.moviesApiUrl, {
