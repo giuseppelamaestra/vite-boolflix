@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" name="movie-search" id="movie-search" v-model=" searchInput">
-    <button @click="log(searchInput)"> Search</button>
+    <button @click="$emit('searched', searchInput)"> Search</button>
   </div>
 </template>
 <script>
@@ -19,7 +19,7 @@ export default{
     },
 
     methods : {
-         log(message) {
+        log(message) {
             console.warn(message);
          }
     },

@@ -1,5 +1,5 @@
 <template>
-   <SearchBar/>
+   <SearchBar @searched="log"/>
    <MoviesList/>
 </template>
 <script>
@@ -13,7 +13,10 @@ export default {
          MoviesList,
     },
     methods : {
-
+        log(message) {
+            console.warn(message);
+         }
+    
     },
     created(){
 
