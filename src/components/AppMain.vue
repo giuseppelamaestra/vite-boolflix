@@ -8,6 +8,13 @@ import SearchBar from './SearchBar.vue';
 import MoviesList from './MoviesList.vue';
 export default {
     name : 'AppMain',
+
+    data(){
+        return {
+            moviesApiUrl : 'https://api.themoviedb.org/3/search/movie'
+        }
+    },
+
     components : {
          SearchBar,
          MoviesList,
@@ -18,9 +25,10 @@ export default {
          },
 
          getMovies(searcheInput){
-            axios.get('https://api.themoviedb.org/3/search/movie?&query=', {
+            axios.get(this.moviesApiUrl, {
                 params : {  
-                  api_key: ccfd4451a0b08c098e69339b74b1f549
+                  api_key: 'ccfd4451a0b08c098e69339b74b1f549',
+                  query : searcheInput,
                        }
                      } )
               .then(function (response) {
