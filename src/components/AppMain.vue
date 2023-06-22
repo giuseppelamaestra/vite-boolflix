@@ -6,6 +6,12 @@
 <script>
 export default {
     name : 'AppMain',
+    components : {
+
+    },
+    methods : {
+
+    },
 }
 </script>
 <style lang="scss">
