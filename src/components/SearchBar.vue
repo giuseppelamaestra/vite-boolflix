@@ -1,7 +1,8 @@
 <template>
-  <h2>
-    SearchBar
-  </h2>
+  <div>
+    <input type="text" name="movie-search" id="movie-search" v-model=" searchInput">
+    <button @click="searchInput"> Search</button>
+  </div>
 </template>
 <script>
 export default{
@@ -9,8 +10,18 @@ export default{
     props: {
 
     },
-    methods : {
 
+    data() {
+        return {
+            searchInput : ''
+        }
+
+    },
+
+    methods : {
+         log(message) {
+            console.warn(message);
+         }
     },
 }
 </script>
