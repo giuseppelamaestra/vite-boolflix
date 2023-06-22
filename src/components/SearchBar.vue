@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" name="movie-search" id="movie-search" v-model=" searchInput">
-    <button @click="searchInput"> Search</button>
+    <button @click="log(searchInput)"> Search</button>
   </div>
 </template>
 <script>
