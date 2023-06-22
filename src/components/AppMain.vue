@@ -4,7 +4,9 @@
     </h1>
 </template>
 <script>
-
+export default {
+    name : 'AppMain',
+}
 </script>
 <style lang="scss">
 
