@@ -17,8 +17,12 @@ export default {
             console.warn(message);
          },
 
-         getMovies(){
-            axios.get('https://api.themoviedb.org/3/search/movie?api_key=ccfd4451a0b08c098e69339b74b1f549&query=')
+         getMovies(searcheInput){
+            axios.get('https://api.themoviedb.org/3/search/movie?&query=', {
+                params : {  
+                  api_key: ccfd4451a0b08c098e69339b74b1f549
+                       }
+                     } )
               .then(function (response) {
                // handle success
                  console.log(response);
