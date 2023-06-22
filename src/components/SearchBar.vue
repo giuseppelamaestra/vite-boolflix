@@ -1,5 +1,7 @@
 <template>
-
+  <h2>
+    SearchBar
+  </h2>
 </template>
 <script>
 export default{

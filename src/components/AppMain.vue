@@ -1,13 +1,16 @@
 <template>
-    <h1>
-        Main
-    </h1>
+   <SearchBar/>
+   <MoviesList/>
 </template>
 <script>
+
+import SearchBar from './SearchBar.vue';
+import MoviesList from './MoviesList.vue';
 export default {
     name : 'AppMain',
     components : {
-
+         SearchBar,
+         MoviesList,
     },
     methods : {
 
